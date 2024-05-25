@@ -1,25 +1,42 @@
 import { HelpCircleIcon, Menu, MessageCircleDashed, Plus } from "lucide-react";
 import "./Sidebar.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Context } from "../../Context/Context";
 
 const Sidebar = () => {
   const [extented, setExtended] = useState(false);
+  const { onSent, prevPrompts, setRecentPrompt, newChat } = useContext(Context);
+
+  const loadPrompt = async (prompt) => {
+    setRecentPrompt(prompt);
+    await onSent(prompt);
+    // setExtended(false);
+  };
 
   return (
     <div className="sidebar">
       <div className="top">
         <Menu onClick={() => setExtended((prev) => !prev)} className="menu" />
-        <div className="new-chat">
+        <div onClick={() => newChat()} className="new-chat">
           <Plus />
           {extented ? <p>New Chat</p> : null}
         </div>
+
         {extented ? (
           <div className="recent">
             <p className="recent-title">Recent</p>
-            <div className="recent-entry">
-              <MessageCircleDashed />
-              <p>What is flora?</p>
-            </div>
+            {prevPrompts.map((item) => {
+              return (
+                <div
+                  onClick={() => loadPrompt(item)}
+                  className="recent-entry"
+                  key={item}
+                >
+                  <MessageCircleDashed />
+                  <p>{item.slice(0, 18)}...</p>
+                </div>
+              );
+            })}
           </div>
         ) : null}
       </div>

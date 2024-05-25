@@ -27,7 +27,7 @@ const Main = () => {
     <>
       <div className="main">
         <div className="nav">
-          <p>Heritage Hub</p>
+          <p>Heritage Guide</p>
           <CircleUserRound />
         </div>
         <div className="main-container">
