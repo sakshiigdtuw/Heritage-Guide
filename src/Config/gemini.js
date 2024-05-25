@@ -1,13 +1,10 @@
-// Importing dependencies
 import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
-import geminiConfig from "../config/gemini";
+import { GEMINI_API_KEY, GEMINI_MODEL } from "../config/gemini";
 
-// Initialize GoogleGenerativeAI with environment variables
-const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
-// Correctly pass the model name to getGenerativeModel
 const model = genAI.getGenerativeModel({
-  model: import.meta.env.VITE_GEMINI_MODEL, // Ensure this matches the expected format
+  model: GEMINI_MODEL,
 });
 
 const generationConfig = {
@@ -59,5 +56,4 @@ async function run(prompt) {
   return response.text();
 }
 
-// Exporting the function as default
 export default run;
