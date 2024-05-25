@@ -1,7 +1,13 @@
-import "./app.css";
+import Main from "./components/Main/Main";
+import Sidebar from "./components/Sidebar/Sidebar";
 
-export function App() {
-  return <></>;
-}
+const App = () => {
+  return (
+    <>
+      <Sidebar />
+      <Main />
+    </>
+  );
+};
 
 export default App;
