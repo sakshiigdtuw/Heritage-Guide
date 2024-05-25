@@ -44,7 +44,16 @@ const Sidebar = () => {
       <div className="bottom">
         <div className="bottom-item recent-entry">
           <HelpCircleIcon />
-          {extented ? <p>Help</p> : null}
+          {extented ? (
+            <p>
+              <a
+                href="https://forms.gle/wjd7xU7XQyA3YrKk8"
+                style={{ color: "white" }}
+              >
+                Help
+              </a>
+            </p>
+          ) : null}
         </div>
       </div>
     </div>
