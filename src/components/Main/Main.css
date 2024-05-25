@@ -1,10 +1,15 @@
 .main {
   flex: 1;
-  min-height: 90vh;
+  min-height: 100vh;
   /* padding-bottom: 15vh; */
   position: relative;
   background-color: #1a1a1a;
   color: whitesmoke;
+}
+
+.main-container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .main .nav {
@@ -16,10 +21,11 @@
 }
 
 .main .greet {
-  margin: 30px 150px;
+  margin: 30px 0px;
   font-size: 56px;
   background: linear-gradient(to right, #24c95b 0%, #38f9d7 100%);
   font-weight: 700;
+  padding: 20px;
   -webkit-background-clip: text;
   color: transparent;
   background-clip: text;
@@ -27,10 +33,10 @@
 
 .main .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 15px;
   padding: 20px;
-  margin-left: 150px;
+  margin-left: 20px;
 }
 
 .main .card {
@@ -38,7 +44,9 @@
   padding: 15px;
   background-color: rgb(49, 49, 49);
   position: relative;
+  border-radius: 10px;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .main .card .icon {
@@ -53,7 +61,7 @@
 
 .main .card p {
   color: aliceblue;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .main .card:hover {
@@ -70,7 +78,6 @@
 }
 
 .search-box {
-  margin-left: 130px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -78,6 +85,7 @@
   gap: 20px;
   background-color: rgb(56, 56, 54);
   padding: 10px 20px;
+  border-radius: 40px;
 }
 
 .search-box input {
@@ -96,8 +104,8 @@
   gap: 15px;
 }
 
-.result {
-  padding: 10px 150px;
+.search-box .icon {
+  cursor: pointer;
 }
 
 .result::-webkit-scrollbar {
@@ -136,5 +144,29 @@
   }
   100% {
     background-position: 800px 0px;
+  }
+}
+
+@media (min-width: 600px) {
+  .main-bottom input {
+    flex: none;
+    width: 150px !important; /* Use!important to test override */
+  }
+  .search-box {
+    padding: 5px 10px !important; /* Use!important to test override */
+  }
+  .search-box div {
+    gap: 5px !important; /* Use!important to test override */
+  }
+}
+
+@media (min-width: 600px) {
+  .main.cards {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(180px, 1fr)
+    ); /* Original settings for larger screens */
+    gap: 15px; /* Increased gap for larger screens */
+    margin-left: 150px; /* Adjusted margin for larger screens */
   }
 }

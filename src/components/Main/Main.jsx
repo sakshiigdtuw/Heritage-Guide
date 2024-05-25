@@ -42,37 +42,64 @@ const Main = () => {
 
               <div className="cards">
                 <motion.div whileHover={{ scale: 1.1 }}>
-                  <div className="card">
+                  <div
+                    className="card"
+                    onClick={() =>
+                      onSent(
+                        "can you name a country known for its unique bird variteis?"
+                      )
+                    }
+                  >
                     <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Architect
+                      can you name a country known for its unique bird variteis?
                     </p>
                     <Leaf className="icon" />
                   </div>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.1 }}>
-                  <div className="card">
+                  <div
+                    className="card"
+                    onClick={() =>
+                      onSent(
+                        " what is the best flowering season for strobillanthus kunthiana ?"
+                      )
+                    }
+                  >
                     <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Architect
+                      what is the best flowering season for strobillanthus
+                      kunthiana ?
                     </p>
                     <Leaf className="icon" />
                   </div>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.1 }}>
-                  <div className="card">
+                  <div
+                    className="card"
+                    onClick={() =>
+                      onSent(
+                        "can you name a less aesthetically pleasing but ecologically crucial, biodiversity heritage site?"
+                      )
+                    }
+                  >
                     <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Architect
+                      can you name a less aesthetically pleasing but
+                      ecologically crucial, biodiversity heritage site?
                     </p>
                     <Leaf className="icon" />
                   </div>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.1 }}>
-                  <div className="card">
+                  <div
+                    className="card "
+                    onClick={() =>
+                      onSent(
+                        "can you brainstorm ways to support conservation site with  the communities live alongside bioheritage sites?"
+                      )
+                    }
+                  >
                     <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Architect
+                      can you brainstorm ways to support conservation site with
+                      the communities live alongside bioheritage sites?
                     </p>
                     <Leaf className="icon" />
                   </div>
@@ -114,7 +141,7 @@ const Main = () => {
               <div className="icon">
                 <ImagePlus />
                 <MicIcon />
-                <SendHorizontal onClick={() => onSent()} />
+                {input ? <SendHorizontal onClick={() => onSent()} /> : null}
               </div>
             </div>
           </div>
