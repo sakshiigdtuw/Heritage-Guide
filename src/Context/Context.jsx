@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { createContext, useState } from "react";
-import run from "../Config/gemini.js";
+import run from "../config/gemini";
 
 export const Context = createContext();
 
