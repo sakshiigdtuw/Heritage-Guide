@@ -72,7 +72,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  max-width: 900px;
+  max-width: 700px;
   padding: 0px 20px;
   margin: auto;
 }
@@ -150,23 +150,18 @@
 @media (min-width: 600px) {
   .main-bottom input {
     flex: none;
-    width: 150px !important; /* Use!important to test override */
+    width: 150px;
   }
+
+  /* .main-bottom .icon {
+    width: 20px;
+  } */
+
   .search-box {
-    padding: 5px 10px !important; /* Use!important to test override */
-  }
-  .search-box div {
-    gap: 5px !important; /* Use!important to test override */
+    padding: 5px 10px;
   }
 }
 
-@media (min-width: 600px) {
-  .main.cards {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(180px, 1fr)
-    ); /* Original settings for larger screens */
-    gap: 15px; /* Increased gap for larger screens */
-    margin-left: 150px; /* Adjusted margin for larger screens */
-  }
+.search-box div {
+  gap: 5px; /* Use!important to test override */
 }
